@@ -1,0 +1,14 @@
+{
+	"name": "remote-device",
+	"main": "index.html",
+	"description": "Remote Device creates starts a server that waits for connection from devices (smartphones & tablets) and shows a 3D model that represents the device simulating device orientation.",
+	"version": "0.0.1",
+	"keywords": ["node-webkit", "server", "remote", "real time", "3D simulation"],
+	"window": {
+	    "toolbar": true,
+	    "frame": true,
+	    "width": 800,
+	    "height": 500,
+	    "position": "center"
+	}
+}

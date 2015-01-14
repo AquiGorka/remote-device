@@ -1,0 +1,11 @@
+ToDo
+----
+Que funcione por lo menos 1 ejemplo de ThreeJS
+Module Connect
+Module Dnevice
+Preparar archivos correctamente para que las dependencias se puedan npm instalar
+App con nodewebkit
+	Modules:
+		- connect
+		- device
+Server que responda a dir local con html + css + js
