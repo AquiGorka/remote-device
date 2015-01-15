@@ -1,6 +1,8 @@
 ToDo
 ----
-Que funcione por lo menos 1 ejemplo de ThreeJS
+Acomodar los archivos para que se llamen en contexto de window
+Ver que funcione el server y que haya comunicación entre los objetos en los dos contextos
+Meter los archivos en exportación estilo module :: por qué si funciona para router y module pero no para los demás capaz y vas a tener que hacerlo directo por browserify (aunque sea por lo menos utils)
 Module Connect
 Module Dnevice
 Preparar archivos correctamente para que las dependencias se puedan npm instalar

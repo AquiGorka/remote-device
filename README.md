@@ -1,9 +1,11 @@
 Remote Device
 =============
 
-nodewebkit .
-
 Remote device creates starts a server that waits for connection from devices (smartphones & tablets) and shows a 3D model that represents the device simulating device orientation.
+
+Run
+----
+nodewebkit src/
 
 v0.0.2
 ------
