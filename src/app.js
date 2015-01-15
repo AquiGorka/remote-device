@@ -1,72 +1,19 @@
-"use strict";
-
-var $ = require('jquery'),
-    router = require('./libs/aquigorka/router/router'),
-    ConnectModule = require('./modules/connect/js/module'),
-    DeviceModule = require('./modules/device/js/module');
-
-router.init([
-      new ConnectModule(),
-      new DeviceModule()
-  ]);
-
-router.routeToModuleId('connect');
-
-
-
 /*
-console.log('Console.log output');
+!function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.Module=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+	"use strict";
+*/
+	var app = function () {
+		router.init([
+			new ConnectModule()
+			//new DeviceModule()
+		]);
 
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-var $ = require('jquery');
+		router.routeToModuleId('connect');
+	};
+	app();
+/*
+	module.exports = app();
 
-// prepare relay
-io.on('connection', function(socket) {
-	//
-	console.log('user connected');
-	//
-	socket.on('disconnect', function () {
-		console.log('user disconnected');
-	});
-	//
-	socket.on('puppet', function (data) {
-		console.log('puppet sent: ' + JSON.stringify(data));
-		$('.content').text(JSON.stringify(data));
-	});
+},{}]},{},[1])(1)
 });
-
-// start server
-http.listen(3000, function () {
-	console.log('listening on *:3000');
-});
-
-
-// find out my ip address
-var os = require('os');
-var ifaces = os.networkInterfaces();
-
-Object.keys(ifaces).forEach(function (ifname) {
-  var alias = 0
-    ;
-
-  ifaces[ifname].forEach(function (iface) {
-    if ('IPv4' !== iface.family || iface.internal !== false) {
-      // skip over internal (i.e. 127.0.0.1) and non-ipv4 addresses
-      return;
-    }
-
-    if (alias >= 1) {
-      // this single interface has multiple ipv4 addresses
-      console.log(ifname + ':' + alias, iface.address);
-    } else {
-      // this interface has only one ipv4 adress
-      console.log(ifname, iface.address);
-    }
-  });
-});
-
-// another way
-var ip = require("ip");
-console.dir ( ip.address() );*/
+*/
