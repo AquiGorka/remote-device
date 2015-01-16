@@ -65,7 +65,6 @@
 		},
 		routeToModuleId: function (id, params) {
 			var potentialModule = this._modules.filter(function (moduleItem) {
-				console.log(moduleItem);
 				return moduleItem.getId() === id;
 			});
 			if (potentialModule.length > 0) {

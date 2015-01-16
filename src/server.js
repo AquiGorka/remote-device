@@ -1,0 +1,30 @@
+"use strict";
+
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+var ip = require("ip");
+
+// prepare relay
+io.on('connection', function(socket) {
+	//
+	console.log('user connected');
+	//
+	socket.on('disconnect', function () {
+		console.log('user disconnected');
+	});
+	// events
+	socket.on('puppet', function (data) {
+		console.log('puppet sent: ' + JSON.stringify(data));
+		socket.broadcast.emit('theater', data);
+	});
+	socket.on('get-ip', function () {
+		console.log('theater asked for ip: ', ip.address());
+		socket.emit('got-ip', ip.address() );
+	});
+});
+
+// start server
+http.listen(6677, function () {
+	console.log('listening on *:6677');
+});

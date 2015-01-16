@@ -1,17 +1,23 @@
-"use strict";
+var DeviceModule = (function () {
+	"use strict";
 
-var Module = require('../../../libs/aquigorka/module/module'),
-	Utils = require('../../../libs/aquigorka/utils/utils');
+	var DeviceModule = function () {}.mixWith(Module);
 
-var DeviceModule = function () {}.mixWith(Module);
+	DeviceModule.prototype._init = function () {
+		this.super()._init('device');
+		this.content = 'Device'
+	};
+	DeviceModule.prototype.show = function () {
+		this.super().show();
 
-DeviceModule.prototype._init = function () {
-	this.super()._init('device');
-};
-DeviceModule.prototype.show = function () {
-	console.log('Device Module Show');
-	this.content = 'Device';
-	this.super().show();
-};
+		// subscribe to update
+		RemoteDeviceJS
+			.on('update', function (data) {
+				console.log(data);
+				$('#deviceModule').html(JSON.stringify(data));
+			});
+	};
 
-module.exports = DeviceModule;
+	return DeviceModule;
+
+})();

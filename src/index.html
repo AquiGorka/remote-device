@@ -3,17 +3,23 @@
 	<head>
 		<title>Remote Device</title>
 	</head>
-	<body id="body">
+	<body>
+		<!-- server -->
+		<script>
+			require('./server');
+		</script>
+
 		<!-- libs -->
 		<script src="libs/jquery/jquery.js"></script>
+		<script src="libs/socket.io/socket.io.js"></script>
 		<script src="libs/aquigorka/router/router.js"></script>
 		<script src="libs/aquigorka/module/module.js"></script>
 		<script src="libs/aquigorka/utils/utils.js"></script>
 		<script src="libs/aquigorka/utils/observable.js"></script>
-		<script src="http://threejs.org/build/three.min.js"></script>
+		<script src="libs/remoteDevice/remoteDeviceJS.js"></script>
 		<!-- modules -->
 		<script src="modules/connect/js/module.js"></script>
-		<!--<script src="modules/device/js/module.js"></script>-->
+		<script src="modules/device/js/module.js"></script>
 		<!-- app -->
 		<script src="app.js"></script>
 	</body>

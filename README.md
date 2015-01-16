@@ -7,6 +7,18 @@ Run
 ----
 nodewebkit src/
 
+v0.0.5
+------
+
+
+v0.0.4
+------
+Connects app to server as theater
+
+v0.0.3
+------
+PoC that runs relay server side by side to app
+
 v0.0.2
 ------
 PoC that this setup can use ThreeJS
