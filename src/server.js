@@ -1,6 +1,7 @@
 "use strict";
 
-var app = require('express')();
+var express = require('express');
+var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var ip = require("ip");
@@ -24,7 +25,13 @@ io.on('connection', function(socket) {
 	});
 });
 
-// start server
+// socket server
 http.listen(6677, function () {
 	console.log('listening on *:6677');
 });
+
+// http requests
+app.get('*', function(req, res){
+  	res.sendFile(__dirname + '/puppet.html');
+});
+

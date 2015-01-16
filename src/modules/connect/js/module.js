@@ -20,7 +20,7 @@ var ConnectModule = (function () {
             })
             .getIp()
                 .then(function (ip) {
-                    $('#connectModule').html(ip + ':6677')
+                    $('#connectModule').html('http://' + ip + ':6677')
                 });
     };
 

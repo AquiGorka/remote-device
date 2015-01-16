@@ -9,7 +9,7 @@ nodewebkit src/
 
 v0.0.5
 ------
-
+Serves puppet.html on any request to server
 
 v0.0.4
 ------
