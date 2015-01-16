@@ -7,6 +7,10 @@ Run
 ----
 nodewebkit src/
 
+v0.0.6
+------
+Adds puppet files; Working prototype
+
 v0.0.5
 ------
 Serves puppet.html on any request to server

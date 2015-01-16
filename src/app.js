@@ -2,15 +2,15 @@
 
 	RemoteDeviceJS
 		.connect()
-		.on('connect', function () {
-			console.log('connected');
+		.on('theater-connect', function () {
+			//console.log('theater connected');
 	        //
 			router.init([
 				new ConnectModule(),
 				new DeviceModule()
 			]);
 
-			router.routeToModuleId('connect');
+			router.routeToModuleId('connect-puppet');
 		});
 
 })();

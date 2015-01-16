@@ -6,7 +6,7 @@ var ConnectModule = (function () {
     var ConnectModule = function () {}.mixWith(Module);
 
     ConnectModule.prototype._init = function () {
-        this.super()._init('connect');
+        this.super()._init('connect-puppet');
     };
     ConnectModule.prototype.show = function () {
         //
@@ -16,6 +16,7 @@ var ConnectModule = (function () {
         // get local IP to share connection address
         RemoteDeviceJS
             .on('puppet-connect', function () {
+                //console.log('routing to device module');
                 router.routeToModuleId('device');
             })
             .getIp()

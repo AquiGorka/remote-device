@@ -19,6 +19,10 @@ io.on('connection', function(socket) {
 		console.log('puppet sent: ' + JSON.stringify(data));
 		socket.broadcast.emit('theater', data);
 	});
+	socket.on('puppet-connect', function () {
+		console.log('puppet connected');
+		socket.broadcast.emit('puppet-connect');
+	});
 	socket.on('get-ip', function () {
 		console.log('theater asked for ip: ', ip.address());
 		socket.emit('got-ip', ip.address() );
@@ -31,7 +35,4 @@ http.listen(6677, function () {
 });
 
 // http requests
-app.get('*', function(req, res){
-  	res.sendFile(__dirname + '/puppet.html');
-});
-
+app.use(express.static(__dirname + '/')); 

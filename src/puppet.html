@@ -4,6 +4,68 @@
 		<title>Remote Device Puppet</title>
 	</head>
 	<body>
-		Puppet
+		<!-- libs -->
+		<!--<script src="libs/jquery/jquery.js"></script>-->
+		<script src="libs/socket.io/socket.io.js"></script>
+		
+		<!--<script src="libs/aquigorka/utils/utils.js"></script>
+		<script src="libs/aquigorka/utils/observable.js"></script>-->
+		
+		<!-- puppet -->
+		<script>
+			(function () {
+				"use strict";
+
+				var socket,
+					data = {
+						orientation: {
+							alpha: 0,
+							betta: 0,
+							gamma: 0
+						},
+						motion: {
+							x: 0,
+							y: 0,
+							z: 0
+						}
+					};
+
+				var init = function () {
+					socket = io('http://' + window.location.host);
+					socket.on('connect', function () {
+						//console.log('puppet connected');
+						//
+						socket.emit('puppet-connect');
+						//
+						setupHandlers();
+					});	
+				};
+
+				var setupHandlers = function () {
+					// handlers
+					window.ondevicemotion = function (event) {
+						data.motion = {
+							x: event.acceleration.x,
+							y: event.acceleration.y,
+							z: event.acceleration.z
+						}
+						//
+						socket.emit('puppet', data);
+					}
+					window.ondeviceorientation = function (event) {
+						data.orientation = {
+							alpha: event.alpha,
+							beta: event.beta,
+							gamma: event.gamma
+						};
+						//
+						socket.emit('puppet', data);
+					}
+				};
+				
+				init();
+
+			})();
+		</script>
 	</body>
 </html>
