@@ -7,6 +7,10 @@ Run
 ----
 nodewebkit src/
 
+v0.0.9
+------
+Adds ThreeJS layer to device module; First working prototype to use real time data from remote device
+
 v0.0.8
 ------
 Synchs handling of different Theaters; Filters out more than one puppet

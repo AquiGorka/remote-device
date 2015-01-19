@@ -2,3 +2,4 @@ ToDo
 ----
 Preparar archivos correctamente para que las dependencias se puedan npm instalar
 Rechazar theater y puppet
+Problema al recargar en browser, a veces no entra directo a device si ya hay un puppet

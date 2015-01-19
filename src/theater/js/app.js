@@ -8,7 +8,7 @@
 
 	// start remote device theater
 	Theater
-		// when connected as theater init route to connect puppet module
+		// when connected as theater, route to connect puppet module
 		.on('connect', function () {
 			//console.log('Theater: connected as theater');
 	        //
