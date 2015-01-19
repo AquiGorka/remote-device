@@ -1,11 +1,15 @@
 Remote Device
 =============
 
-Remote device creates starts a server that waits for connection from devices (smartphones & tablets) and shows a 3D model that represents the device simulating device orientation.
+Remote device creates and runs a server that waits for connection from devices (smartphones & tablets) and shows a 3D model that represents the device simulating device orientation.
 
 Run
 ----
 nodewebkit src/
+
+v0.0.8
+------
+Synchs handling of different Theaters; Filters out more than one puppet
 
 v0.0.7
 ------

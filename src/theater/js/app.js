@@ -12,7 +12,7 @@
 		.on('connect', function () {
 			//console.log('Theater: connected as theater');
 	        //
-			router.routeToModuleId('connect-puppet');
+			router.routeToModuleId('connect');
 		})
 		// connect to server
 		.connect({host: 'http://127.0.0.1:6677'});

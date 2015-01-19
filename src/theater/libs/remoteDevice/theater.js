@@ -16,7 +16,7 @@ var Theater = (function () {
 	Theater.prototype.getIp = function () {
 		if (socket) {
 			return new Promise(function (fulfill, reject) {
-				socket.on('got-ip', fulfill);
+				socket.once('got-ip', fulfill);
 				socket.emit('get-ip');
 			});
 		} else {
@@ -35,10 +35,12 @@ var Theater = (function () {
 			});
 			// listen to puppet connect event
 			socket.on('puppet-connect', function () {
+				//console.log('Theater: There is at least 1 puppet connected');
 				that._observers.notify('puppet-connect');
 			});
 			// listen to all puppets disconnected event
 			socket.on('puppet-disconnect-all', function () {
+				//console.log('Theater: All puppets have been disconnected');
 				that._observers.notify('puppet-disconnect-all');
 			});
 			//

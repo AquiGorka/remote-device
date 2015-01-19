@@ -11,7 +11,7 @@ var server = (function () {
 	http.listen(6677, function () {
 		console.log('Server: listening on *:6677');
 	});
-	
+
 	// http requests
 	server.use(express.static(__dirname + '/../'));
 	
@@ -41,6 +41,11 @@ var theaters = (function () {
 				clients.push(socket);
 				// let client know we accept it as theater
 				socket.emit('theater-connect');
+				// let client know if there are any puppets already connected
+				//console.log('Server: Puppets length: ', puppets.getAll().length);
+				if (puppets.getAll().length) {
+					socket.emit('puppet-connect');
+				}
 				// setup
 				socket.on('get-ip', function () {
 					//console.log('Server: Theater asked for ip: ', ip.address());
@@ -50,7 +55,7 @@ var theaters = (function () {
 		});
 		// remove theater form array if disconnected
 		socket.on('disconnect', function () {
-			clients.splice(clients.indexOf(socket), 1);
+			//clients.splice(clients.indexOf(socket), 1);
 		});
 	});
 
@@ -77,10 +82,10 @@ var puppets = (function () {
 	io.on('connection', function (socket) {
 		// this client is our puppet
 		socket.on('puppet-connect', function () {
-			//console.log('Server: client wants to become a puppet');
-			if (clients.indexOf(socket) === -1) {
-				//console.log('Server: let theaters know of puppet');
+			//console.log('Server: client wants to become a puppet: ', puppets.getAll().length);
+			if (clients.length === 0) {
 				clients.push(socket);
+				//console.log('Server: Let theaters know of puppet', puppets.getAll().length);
 				// let client know we accept it as puppet
 				socket.emit('puppet-connect');
 				// let theaters know we accepted a puppet
@@ -102,6 +107,12 @@ var puppets = (function () {
 			theaters.emit('data', data);
 		});
 	});
+
+	return {
+		getAll: function () {
+			return clients;
+		}
+	};
 
 })();
 

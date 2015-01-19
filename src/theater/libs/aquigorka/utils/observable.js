@@ -60,7 +60,6 @@ var Observable = (function () {
             else {
                 anObserver.notify.apply(anObserver, that, arguments);
             }
-            //that._observers.remove(obs);
             that._observers[that._observers.indexOf(obs)] = function () {};
         }, eventName);
         return this;

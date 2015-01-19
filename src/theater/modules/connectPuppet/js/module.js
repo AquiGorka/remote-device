@@ -6,15 +6,15 @@ var ConnectModule = (function () {
     var ConnectModule = function () {}.mixWith(Module);
 
     ConnectModule.prototype._init = function () {
-        this.super()._init('connect-puppet');
+        this.super()._init('connect');
     };
     ConnectModule.prototype.show = function () {
         //
-        this.super().show();
+        this.super().show(['connect']);
         //
         Theater
             // subscribe to puppet connect event
-            .on('puppet-connect', function () {
+            .once('puppet-connect', function () {
                 //console.log('Theater: route to device module');
                 router.routeToModuleId('device');
             })
@@ -25,7 +25,7 @@ var ConnectModule = (function () {
                     throw(err);
                 })
                 .then(function (ip) {
-                    $('#connect-puppetModule').html('http://' + ip + ':6677/puppet/index.html')
+                    $('#connectModule').html('http://' + ip + ':6677/puppet/index.html')
                 });
     };
 
