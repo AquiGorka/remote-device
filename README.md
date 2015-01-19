@@ -7,6 +7,10 @@ Run
 ----
 nodewebkit src/
 
+v0.0.7
+------
+Adds separation of concerns in server, theater and puppet
+
 v0.0.6
 ------
 Adds puppet files; Working prototype

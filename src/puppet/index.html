@@ -5,13 +5,9 @@
 	</head>
 	<body>
 		<!-- libs -->
-		<!--<script src="libs/jquery/jquery.js"></script>-->
 		<script src="libs/socket.io/socket.io.js"></script>
 		
-		<!--<script src="libs/aquigorka/utils/utils.js"></script>
-		<script src="libs/aquigorka/utils/observable.js"></script>-->
-		
-		<!-- puppet -->
+		<!-- app -->
 		<script>
 			(function () {
 				"use strict";
@@ -33,12 +29,18 @@
 				var init = function () {
 					socket = io('http://' + window.location.host);
 					socket.on('connect', function () {
-						//console.log('puppet connected');
+						// am I accepted as puppet?
+						socket.on('puppet-connect', function () {
+							//
+							setupHandlers();
+						})
 						//
 						socket.emit('puppet-connect');
-						//
-						setupHandlers();
 					});	
+				};
+
+				var sendData = function () {
+					socket.emit('data', data);
 				};
 
 				var setupHandlers = function () {
@@ -50,7 +52,7 @@
 							z: event.acceleration.z
 						}
 						//
-						socket.emit('puppet', data);
+						sendData();
 					}
 					window.ondeviceorientation = function (event) {
 						data.orientation = {
@@ -59,7 +61,7 @@
 							gamma: event.gamma
 						};
 						//
-						socket.emit('puppet', data);
+						sendData();
 					}
 				};
 				

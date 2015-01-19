@@ -11,9 +11,9 @@ var DeviceModule = (function () {
 		this.super().show();
 
 		// subscribe to update
-		RemoteDeviceJS
-			.on('theater', function (rdjs, data) {
-				//console.log('data from puppet: ', data);
+		Theater
+			.on('data', function (rdjs, data) {
+				//console.log('Theater: Data from puppet: ', data);
 				$('#deviceModule').html(JSON.stringify(data));
 			});
 	};

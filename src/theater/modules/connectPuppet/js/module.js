@@ -11,17 +11,21 @@ var ConnectModule = (function () {
     ConnectModule.prototype.show = function () {
         //
         this.super().show();
-
-        // subscribe to puppet connect event
-        // get local IP to share connection address
-        RemoteDeviceJS
+        //
+        Theater
+            // subscribe to puppet connect event
             .on('puppet-connect', function () {
-                //console.log('routing to device module');
+                //console.log('Theater: route to device module');
                 router.routeToModuleId('device');
             })
+            // get local IP to share connection address
             .getIp()
+                .catch(function (err) {
+                    console.warn('Theater: There was an error when asking for server ip to share connection address');
+                    throw(err);
+                })
                 .then(function (ip) {
-                    $('#connectModule').html('http://' + ip + ':6677')
+                    $('#connect-puppetModule').html('http://' + ip + ':6677/puppet/index.html')
                 });
     };
 
