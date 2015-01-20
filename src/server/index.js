@@ -3,7 +3,6 @@
 /**********/
 /* SERVER */
 /**********/
-
 var server = (function () {
 
 	var express = require('express');

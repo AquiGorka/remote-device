@@ -1,11 +1,15 @@
 Remote Device
 =============
 
-Remote device creates and runs a server that waits for connection from devices (smartphones & tablets) and shows a 3D model that represents the device simulating device orientation.
+Remote device creates and runs a server that waits for connection from devices (smartphones & tablets) and shows a 3D model that represents the device orientation.
 
 Run
 ----
 nodewebkit src/
+
+v0.0.12
+-------
+Moves Moderator to server as another process
 
 v0.0.11
 -------
