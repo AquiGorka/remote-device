@@ -9,7 +9,7 @@ nodewebkit src/
 
 v0.0.11
 -------
-Adds moderator abstraction to Remote Device
+Adds moderator abstraction to Remote Device; Removes filter to only allow 1 puppet connection
 
 v0.0.10
 -------

@@ -5,6 +5,9 @@ Rechazar theater y puppet
 Problema al recargar en browser, a veces no entra directo a device si ya hay un puppet
 Deja que server reciba todos los puppets que quiera
 Introduce la abstracción de moderador y ese es el que hace relay a theaters de data > ahí va la capa de lógica
+Agregar QR code para que puppet se conecte
+Token namespacing para poder hacer rooms
+Emit data to one theater and one puppet
 
 CSS3 en lugar de ThreeJS??
 --------------------------

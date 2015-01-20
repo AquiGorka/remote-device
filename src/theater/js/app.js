@@ -8,6 +8,10 @@
 
 	// start remote device theater
 	Theater
+		// if there are no puupets left show connect module
+		.on('puppet-disconnect-all', function () {
+			router.routeToModuleId('connect');
+		})
 		// when connected as theater, route to connect puppet module
 		.on('connect', function () {
 			//console.log('Theater: connected as theater');

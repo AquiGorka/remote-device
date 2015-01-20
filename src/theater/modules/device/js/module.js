@@ -55,18 +55,12 @@ var DeviceModule = (function () {
 		
 		// subscribe to update
 		Theater
-			.once('puppet-disconnect-all', function () {
-				router.routeToModuleId('connect');
-			})
 			.on('data', function (rdjs, data) {
 				//console.log('Theater: Data from puppet: ', data);
-				//$('#deviceModule').html(JSON.stringify(data));
 				remoteDeviceData = data;
 			});
-
 		//
         $('#deviceModule').empty().append(renderer.domElement);
-
         //
         animate();
 	};

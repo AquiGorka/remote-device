@@ -5,6 +5,11 @@
 		new PuppetModule()
 	]);
 
+	// if I am the first I'll be the moderator
+	Moderator
+		// connect to server
+		.connect({host: 'http://' + window.location.host});
+
 	// start remote device puppet
 	Puppet
 		// when connected as puppet, route to puppet module
