@@ -6,68 +6,14 @@
 	<body>
 		<!-- libs -->
 		<script src="libs/socket.io/socket.io.js"></script>
-		
+		<script src="libs/aquigorka/router/router.js"></script>
+		<script src="libs/aquigorka/module/module.js"></script>
+		<script src="libs/aquigorka/utils/utils.js"></script>
+		<script src="libs/aquigorka/utils/observable.js"></script>
+		<script src="libs/remoteDevice/puppet.js"></script>
+		<!-- modules -->
+		<script src="modules/puppet/js/module.js"></script>
 		<!-- app -->
-		<script>
-			(function () {
-				"use strict";
-
-				var socket,
-					data = {
-						orientation: {
-							alpha: 0,
-							beta: 0,
-							gamma: 0
-						},
-						motion: {
-							x: 0,
-							y: 0,
-							z: 0
-						}
-					};
-
-				var init = function () {
-					socket = io('http://' + window.location.host);
-					socket.on('connect', function () {
-						// am I accepted as puppet?
-						socket.on('puppet-connect', function () {
-							//
-							setupHandlers();
-						})
-						//
-						socket.emit('puppet-connect');
-					});	
-				};
-
-				var sendData = function () {
-					socket.emit('data', data);
-				};
-
-				var setupHandlers = function () {
-					// handlers
-					window.ondevicemotion = function (event) {
-						data.motion = {
-							x: event.acceleration.x,
-							y: event.acceleration.y,
-							z: event.acceleration.z
-						}
-						//
-						sendData();
-					}
-					window.ondeviceorientation = function (event) {
-						data.orientation = {
-							alpha: event.alpha,
-							beta: event.beta,
-							gamma: event.gamma
-						};
-						//
-						sendData();
-					}
-				};
-				
-				init();
-
-			})();
-		</script>
+		<script src="js/app.js"></script>
 	</body>
 </html>

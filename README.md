@@ -7,6 +7,14 @@ Run
 ----
 nodewebkit src/
 
+v0.0.11
+-------
+Adds moderator abstraction to Remote Device
+
+v0.0.10
+-------
+Adds module & router framework to Puppet; Adds Puppet abstraction to Remote Device
+
 v0.0.9
 ------
 Adds ThreeJS layer to device module; First working prototype to use real time data from remote device

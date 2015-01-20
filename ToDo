@@ -3,3 +3,16 @@ ToDo
 Preparar archivos correctamente para que las dependencias se puedan npm instalar
 Rechazar theater y puppet
 Problema al recargar en browser, a veces no entra directo a device si ya hay un puppet
+Deja que server reciba todos los puppets que quiera
+Introduce la abstracción de moderador y ese es el que hace relay a theaters de data > ahí va la capa de lógica
+
+CSS3 en lugar de ThreeJS??
+--------------------------
+https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Using_device_orientation_with_3D_transforms
+
+http://dorukeker.com/know-thy-gyroscope-and-js-part-i/
+
+http://www.peterfriese.de/how-to-use-the-gyroscope-of-your-iphone-in-a-mobile-web-app/
+
+https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Orientation_and_motion_data_explained
+
