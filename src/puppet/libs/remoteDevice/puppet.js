@@ -30,7 +30,7 @@ var Puppet = (function () {
 	Puppet.prototype._setup = function () {
 		var that = this;
 		// am I accepted as puppet?
-		socket.on('puppet-connect', function () {
+		socket.on('puppet-accept', function () {
 			//console.log('Puppet: Accepted as puppet');
 			//
 			that._observers.notify('connect');

@@ -27,7 +27,7 @@ var Theater = (function () {
 	Theater.prototype._setup = function () {
 		var that = this;
 		// am I an accepted theater?
-		socket.on('theater-connect', function () {
+		socket.on('theater-accept', function () {
 			//console.log('Theater: Accepted as theater');
 			// listen to data sent to theater(s)
 			socket.on('data', function (data) {
