@@ -7,6 +7,10 @@ Run
 ----
 nodewebkit src/
 
+v0.0.13
+-------
+Adds 3D model of a smartphone
+
 v0.0.12
 -------
 Moves Moderator to server as another process
