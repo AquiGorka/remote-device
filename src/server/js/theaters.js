@@ -38,7 +38,7 @@ Theaters.prototype.setup = function (io) {
 				clients.splice(clients.indexOf(socket), 1);
 				//
 				that.emit('data', socket, {
-					event: 'connect'
+					event: 'disconnect'
 				});
 			});
 			//
@@ -46,6 +46,14 @@ Theaters.prototype.setup = function (io) {
 				that.emit('data', socket, {
 					event: 'data',
 					data: data
+				});
+			});
+			//
+			socket.on('room-join', function (data) {
+				//
+				that.emit('data', socket, {
+					event: 'room-join',
+					data: data.room
 				});
 			});
 		});

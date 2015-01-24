@@ -32,6 +32,7 @@ var Puppet = (function () {
 		// am I accepted as puppet?
 		socket.on('puppet-accept', function () {
 			//console.log('Puppet: Accepted as puppet');
+			socket.emit('room-join', {'room': 'standalone'});
 			//
 			that._observers.notify('connect');
 		});

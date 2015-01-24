@@ -48,6 +48,13 @@ Puppets.prototype.setup = function (io) {
 					data: data
 				});
 			});
+			//
+			socket.on('room-join', function (data) {
+				that.emit('data', socket, {
+					event: 'room-join',
+					data: data.room
+				});
+			});
 		});
 	});
 	//

@@ -10,13 +10,10 @@ Rooms para que diferentes personas se conecten a diferentes simulaciones
 En puppet agregar boton para normalize y reset (click por 3 segs)
 En puppet meter leyenda de bloquear orientation change
 
-Client Manager
+Client Manager Object y que hereden puppets y theaters
 Preparar archivos correctamente para que las dependencias se puedan npm instalar
-Rechazar theater y puppet?
 Problema al recargar en browser, a veces no entra directo a device si ya hay un puppet
 Agregar QR code para que puppet se conecte
-Token namespacing para poder hacer rooms
-Emit data to one theater and one puppet
 
 CSS3 en lugar de ThreeJS??
 --------------------------

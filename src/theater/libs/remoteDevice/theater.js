@@ -44,6 +44,8 @@ var Theater = (function () {
 				that._observers.notify('puppet-disconnect-all');
 			});
 			//
+			socket.emit('room-join', {'room': 'standalone'});
+			//
 			that._observers.notify('connect');
 		});
 		// tell the server I want to connect as theater
