@@ -50,7 +50,12 @@ module.exports = {
 						});
 						break;
 					case 'disconnect':
-						roomManager.getRoomsPuppets(puppet).forEach(function (room) {
+						var rooms = roomManager.getRoomsPuppets(puppet);
+						//
+						roomManager.leavePuppets(puppet);
+						//
+						rooms.forEach(function (room) {
+							console.log('room: ', room, roomManager.getPuppets(room).length);
 							if (roomManager.getPuppets(room).length === 0) {
 								roomManager.getTheaters(room).forEach(function (theater) {
 									theater.emit('puppet-disconnect-all');
