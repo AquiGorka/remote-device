@@ -44,16 +44,14 @@ module.exports = {
 						break;
 					case 'data':
 						roomManager.getRoomsPuppets(puppet).forEach(function (room) {
-							if (roomManager.getTheaters(room) && roomManager.getTheaters(room).length > 0) {
-								roomManager.getTheaters(room).forEach(function (theater) {
-									theater.emit(data.event, data.data);
-								});
-							}
+							roomManager.getTheaters(room).forEach(function (theater) {
+								theater.emit(data.event, data.data);
+							});
 						});
 						break;
 					case 'disconnect':
 						roomManager.getRoomsPuppets(puppet).forEach(function (room) {
-							if (!roomManager.getPuppets(room)) {
+							if (roomManager.getPuppets(room).length === 0) {
 								roomManager.getTheaters(room).forEach(function (theater) {
 									theater.emit('puppet-disconnect-all');
 								});
@@ -63,11 +61,9 @@ module.exports = {
 					case 'room-join':
 						roomManager.joinPuppets(puppet, data.data);
 						//
-						if (roomManager.getTheaters(data.data) && roomManager.getTheaters(data.data).length > 0) {
-							roomManager.getTheaters(data.data).forEach(function (theater) {
-								theater.emit('puppet-connect');	
-							});
-						}
+						roomManager.getTheaters(data.data).forEach(function (theater) {
+							theater.emit('puppet-connect');	
+						});
 						break;
 				}						
 			});

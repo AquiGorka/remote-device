@@ -21,13 +21,32 @@ var DeviceModule = (function () {
 		},
 		myReq;
 
+	var angle = 0;
+	var d2r = Math.PI / 180;
+	var eyem = new THREE.Quaternion().setFromEuler(new THREE.Euler(-Math.PI / 2, 0, 0));
+	var rotType = "YXZ";
+	var rotm;
+	var devm;
+
 	var animate = function () {
 		myReq = window.requestAnimationFrame(animate);
 		//
 		if (iphone) {
-			iphone.rotation.x = remoteDeviceData.orientation.beta * Math.PI / 180;
+			/*
 			iphone.rotation.y = remoteDeviceData.orientation.gamma * Math.PI / 180;
+			iphone.rotation.x = remoteDeviceData.orientation.beta * Math.PI / 180;
 			iphone.rotation.z = remoteDeviceData.orientation.alpha * Math.PI / 180;
+			*/
+			// thank you so much!! https://gist.github.com/bellbind/d2be9cc09bf6241f255d
+			//
+	        var alpha = remoteDeviceData.orientation.alpha || 0;
+	        var beta = remoteDeviceData.orientation.beta || 0;
+	        var gamma = remoteDeviceData.orientation.gamma || 0;
+			//
+	        rotm = new THREE.Quaternion().setFromEuler(new THREE.Euler(beta * d2r, alpha * d2r, -gamma * d2r, rotType));
+	        devm = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, -angle * d2r, 0));
+	        rotm.multiply(devm).multiply(eyem);
+	        iphone.quaternion.copy(rotm);
 		}
 		renderer.render(scene, camera);
 	}

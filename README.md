@@ -7,12 +7,13 @@ Run
 ----
 nodewebkit src/
 
+v0.0.16
+-------
+Adds gyro.js for cross-browser/device normalization of data; Adds better calculation of rotation angles
+
 v0.0.15
 -------
 Adds Rooms for theater/puppet unique combinations
-Rooms para que diferentes personas se conecten a diferentes simulaciones
-Token namespacing para poder hacer rooms
-
 
 v0.0.14
 -------
