@@ -1,12 +1,31 @@
-Remote Device
-=============
+#Remote Device
+---
 
 Remote device creates and runs a server that waits for connection from devices (smartphones & tablets) and shows a 3D model that represents the device orientation.
+Works as standalone app (build executables using node build).
 
-Run
-----
+##Run
+---
+```shell
+cd to dir
 nodewebkit src/
+```
 
+##Build
+---
+```shell
+cd to dir
+sudo nwbuild --platform 'win','osx','linux' src/
+```
+
+##Technologies used
+---
+- nodeJS
+- node-webkit
+- socket.io
+
+##Change Log
+---
 v0.0.16
 -------
 Adds gyro.js for cross-browser/device normalization of data; Adds better calculation of rotation angles
@@ -70,3 +89,30 @@ PoC that this setup can use ThreeJS
 v0.0.1
 ------
 Adds Boilerplate files + Basic App Structure + Base Files for Modules
+
+
+###License
+---
+Available in other licenses by contacting me.
+
+(The MIT License)
+
+Copyright (c) 2015 Gorka Ludlow  <http://www.AquiGorka.com>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
