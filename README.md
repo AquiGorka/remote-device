@@ -1,7 +1,7 @@
 #Remote Device
 
-Remote device creates and runs a server that waits for connection from devices (smartphones & tablets) and shows a 3D model that represents the device orientation.
-Works as standalone app (build executables using node build).
+Remote device creates and runs a server that waits for connections from devices (smartphones or tablets) and shows a 3D model that represents the device's orientation.
+Works as standalone app (build executables using node webkit build).
 
 ##Run
 ```shell
