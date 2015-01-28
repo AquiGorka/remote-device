@@ -1,8 +1,19 @@
 ToDo
 ----
-No llega disconnect-all
-gyro.js
-Licencia (revisa esta: https://github.com/tomgco/gyro.js)
+Ambos
+Sincroniza click en puppet y que se vea en theater y que eso haga reset/normalize
+En puppet meter leyenda de bloquear orientation change
+Diseño: theater: puppet conectado o no
+Puppet: créditos
+Agregar QR code para que puppet se conecte
+
+Standalone
+Si abro 2 standalones como haccer para que funcionen por separado - room token
+Por que pesa tanto?
+
+Online Server
+Subir todo a un servidor
+
 Auth
 Manera de controlar a distancia uso? update de apps?
 Sincroniza click en puppet y que se vea en theater y que eso haga reset/normalize
@@ -16,7 +27,6 @@ En puppet meter leyenda de bloquear orientation change
 
 Client Manager Object y que hereden puppets y theaters
 Preparar archivos correctamente para que las dependencias se puedan npm instalar
-Problema al recargar en browser, a veces no entra directo a device si ya hay un puppet
 Agregar QR code para que puppet se conecte
 
 CSS3 en lugar de ThreeJS??

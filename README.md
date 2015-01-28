@@ -7,6 +7,7 @@ Works as standalone app (build executables using node build).
 ##Run
 ---
 ```shell
+npm install -g nodewebkit (probably with sudo)
 cd to dir
 nodewebkit src/
 ```
@@ -14,8 +15,9 @@ nodewebkit src/
 ##Build
 ---
 ```shell
+npm install -g nwbuild (probably with sudo)
 cd to dir
-sudo nwbuild --platform 'win','osx','linux' src/
+nwbuild --platform 'win','osx','linux' src/ (probably with sudo)
 ```
 
 ##Technologies used
