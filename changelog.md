@@ -1,4 +1,5 @@
-##Change Log
+## Change Log
+
 v0.0.16
 -------
 Adds gyro.js for cross-browser/device normalization of data; Adds better calculation of rotation angles
