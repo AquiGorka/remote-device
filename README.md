@@ -1,29 +1,29 @@
-#Remote Device
+# Remote Device
 
 Remote device creates and runs a server that waits for connections from devices (smartphones or tablets) and shows a 3D model that represents the device's orientation.
 Works as standalone app (build executables using node webkit build).
 
-##Run
+## Run
 ```shell
 npm install -g nodewebkit (probably with sudo)
 cd to dir
 nodewebkit src/
 ```
 
-##Build
+## Build
 ```shell
 npm install -g nwbuild (probably with sudo)
 cd to dir
 nwbuild --platform 'win','osx','linux' src/ (probably with sudo)
 ```
 
-##Technologies used
+## Technologies used
 - nodeJS
 - node-webkit
 - socket.io
 
 
-###License
+### License
 Available in other licenses by contacting me.
 
 (The MIT License)
